@@ -7,7 +7,7 @@ const ngDirectiveName = 'tsfnProductValidator';
 
 @at.directive(ngModuleName, ngDirectiveName, {
     restrict: 'A',
-    require: ['pippo'],
+    require: ['^^tsfnProduct'],
     link: (scope, elem, attrs, ctrl) => {
         console.log('ciao');
         var products = ['Tachipirina', 'Sciroppo', 'Aspirina'];

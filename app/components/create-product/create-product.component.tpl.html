@@ -5,11 +5,11 @@
             <div flex="50">
                 <fieldset style="background: white;">
                     <legend>Main Product</legend>
-                    <div layout="column" layout-wrap tsfn-product-validator >
+                    <div layout="column" layout-wrap  pippo>
                         <md-content md-theme="docs-dark" layout-gt-sm="row">
                             <md-input-container>
                                 <label>Name</label>
-                                <input  name="name"  ng-model="product.name"  pippo/>
+                                <input  name="name"  ng-model="product.name"  tsfn-product-validator/>
                                 <div ng-messages="myProduct.name.$error" ng-messages-multiple role="alert">
                                     <div ng-message="pattern">Not valid number.</div>
                                     <div ng-message="required">Please enter a value for this field.</div>
