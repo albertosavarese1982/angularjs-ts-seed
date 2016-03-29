@@ -6,6 +6,7 @@ import Dashboard from './dashboard/dashboard';
 import Message from './message/message';
 import Profile from './profile/profile';
 import Table from './table/table';
+import Product from './create-product/create-product';
 
 let components = angular.module('app.components', [
   Common,
@@ -15,7 +16,7 @@ let components = angular.module('app.components', [
   Message,
   Profile,
   Table,
-
+  Product,
   Example
 ]);
 

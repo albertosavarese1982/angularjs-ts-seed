@@ -26,6 +26,12 @@ export default class NavigationService {
       icon: 'view_module',
       sref: '.table',
       link: ['Table']
+    },
+    {
+        name: 'Product',
+        icon: 'add',
+        sref: '.user',
+        link: ['Product']
     }
   ];
 
