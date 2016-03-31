@@ -56,14 +56,14 @@ gulp.task('serve.dev', ['build.dev'], function() {
 
   // app.use(serveStatic(join(__dirname, '..', PATH.dest.dev.all)));
 
+  app.use('/components', express.static(join(__dirname, '..', 'app', 'components')));
   app.use('/', express.static(join(__dirname, '..', PATH.dest.dev.all)));
   // this instruction enables .ts debugging and in-page source code display
-  app.use('/components', express.static(join(__dirname, '..', 'app', 'components')));
-  app.use('/lib', express.static(join(__dirname, '..', PATH.dest.dev.lib)));
-  app.all('/*', function(req, res, next) {
-    // Just send the index.html for other files to support HTML5Mode
-    res.sendFile('index.html', { root: join(__dirname, '..', PATH.dest.dev.all) });
-  });
+//   app.use('/lib', express.static(join(__dirname, '..', PATH.dest.dev.lib)));
+//   app.all('/*', function(req, res, next) {
+//     // Just send the index.html for other files to support HTML5Mode
+//     res.sendFile('index.html', { root: join(__dirname, '..', PATH.dest.dev.all) });
+//   });
 
   app.listen(port, function() {
     openResource('http://localhost:' + port);

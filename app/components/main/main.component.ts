@@ -12,7 +12,7 @@ const ngComponentName = 'tsfnMain';
     { path: '/dashboard', name: 'Dashboard', component: 'tsfnDashboard', data: { title: 'Dashboard' }, useAsDefault: true },
     { path: '/profile', name: 'Profile', component: 'tsfnProfile', data: { title: 'Profile' } },
     { path: '/table', name: 'Table', component: 'tsfnTable', data: { title: 'Table' } },
-    { path: '/product', name: 'Product', component: 'tsfnProduct', data: { title: 'Product' } }
+    { path: '/product/...', name: 'Product', component: 'tsfnProduct', data: { title: 'Product' } }
   ]
 })
 @at.inject('navigationService', '$log', '$q', '$mdSidenav', '$mdBottomSheet', '$mdMenu', '$mdToast')

@@ -1,18 +1,13 @@
 import ngModuleName from './create-product.module';
-import './product-list.component';
 'use strict';
 
-const ngComponentName = 'tsfnProduct';
+const ngComponentName = 'productDetails';
 
 @at.component(ngModuleName, ngComponentName, {
-  templateUrl: 'create-product/create-product.component.tpl.html',
-  $routeConfig: [
-     { path: '/', name: 'Empty', component: 'emptyProduct', useAsDefault: true },
-    { path: '/productlist/...', name: 'List', component: 'productList' }
-  ]
+  templateUrl: 'create-product/detail-product.component.tpl.html'
 })
 @at.inject('$log')
-export default class ProductComponent  {
+export default class ProductDetailsComponent  {
 
   public tableData = [];
 
