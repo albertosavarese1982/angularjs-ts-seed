@@ -1,102 +1,59 @@
-<div layout="column" ng-cloak class="md-inline-form">
+<div layout="column" ng-cloak class="md-inline-form create-component">
     <form name="myProduct" novalidate class="simple-form">
         <div layout="row" class="md-padding" layout-align="center">
 
-
             <fieldset style="background: white;">
                 <legend>Main Product</legend>
-                <div layout="column" layout-wrap pippo>
+                <div layout="column" layout-wrap>
                     <md-content md-theme="docs-dark" layout-gt-sm="row">
                         <md-input-container>
                             <label>Name</label>
-                            <input name="name" ng-model="product.name" tsfn-product-validator/>
+                            <input name="name" ng-model="product.productTO.name" required/>
                             <div ng-messages="myProduct.name.$error" ng-messages-multiple role="alert">
                                 <div ng-message="pattern">Not valid number.</div>
                                 <div ng-message="required">Please enter a value for this field.</div>
                             </div>
                         </md-input-container>
-                       
+
                         <md-input-container>
                             <label>Description</label>
-                            <input ng-model="product.description">
+                            <input ng-model="product.productTO.description">
                         </md-input-container>
                         <md-input-container>
                             <label>Category</label>
-                            <input ng-model="product.category">
+                            <input ng-model="product.productTO.category">
                         </md-input-container>
                     </md-content>
 
                     <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
                         <md-input-container>
                             <label>Drug Name</label>
-                            <input ng-model="product.drugName">
+                            <input ng-model="product.productTO.drugName">
                         </md-input-container>
                         <md-input-container>
                             <label>Manifacturer</label>
-                            <input ng-model="product.manifacturer">
+                            <input ng-model="product.productTO.manifacturer">
                         </md-input-container>
                         <md-input-container>
                             <label>Location</label>
-                            <input ng-model="product.location">
+                            <input ng-model="product.productTO.location">
                         </md-input-container>
                     </md-content>
-                    
+
                     <md-content md-theme="docs-dark" layout-gt-sm="row">
-                        <md-button class="md-raised md-primary" type="submit">Save</md-button>
+                        <md-button class="md-raised md-primary" type="submit" ng-click="product.saveProduct()" ng-disabled="product.productTO.isEmpty()">Save</md-button>
+                        <md-button class="md-raised md-primary" type="submit" ng-click="product.showProduct()" ng-submit ="" ng-disabled="product.isEmptyListProduct()">Show Result</md-button>
                     </md-content>
-                    
+
                 </div>
             </fieldset>
-
-            <!--<div flex="50">
-                <fieldset style="background: white;">
-                    <legend>Additional Information</legend>
-                    <div layout="column" layout-wrap>
-                        <md-content md-theme="docs-dark" layout-gt-sm="row">
-                            <md-input-container>
-                                <label>Packaging size</label>
-                                <input ng-model="product.packagingSize">
-                            </md-input-container>
-                            <md-input-container>
-                                <label>Last Change Date</label>
-                                <input ng-model="product.lastChangeDate">
-                            </md-input-container>
-                            <md-input-container>
-                                <label>Category</label>
-                                <input ng-model="product.category">
-                            </md-input-container>
-                        </md-content>
-
-                        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-                            <md-input-container>
-                                <label>Drug Name</label>
-                                <input ng-model="product.drugName">
-                            </md-input-container>
-                            <md-input-container>
-                                <label>Manifacturer</label>
-                                <input ng-model="product.manifacturer">
-                            </md-input-container>
-                            <md-input-container>
-                                <label>Drug Type</label>
-                                <input ng-model="product.drugType">
-                            </md-input-container>
-                            <md-input-container>
-                                <label>Expiration Date</label>
-                                <input ng-model="product.expirationDate">
-                            </md-input-container>
-                        </md-content>
-                    </div>
-                </fieldset>
-            </div>-->
         </div>
-        <div layoyt="row" class="md-padding">
-            <div flex="50">
-                <h1>Demo App</h1>
-                <a ng-link="['./List']">List<a>
-                <ng-outlet></ng-outlet>
-            </div>
-           
-           
-                
     </form>
+</div>
+<div layoyt="row" class="md-padding">
+    <div flex="50">
+        <h1>Demo App</h1>
+        <a ng-link="['./List']">List</a>
+        <ng-outlet></ng-outlet>
     </div>
+</div>
